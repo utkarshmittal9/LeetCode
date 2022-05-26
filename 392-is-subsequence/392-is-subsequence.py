@@ -8,7 +8,6 @@ class Solution:
         j = 0
         while i < len(s) and j < len(t):
             flag = False
-            print(s[i], t[j])
             if s[i]!=t[j]:
                 j = j+1
             elif s[i]==t[j]:

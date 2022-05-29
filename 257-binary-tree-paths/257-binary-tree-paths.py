@@ -7,14 +7,13 @@
 class Solution:
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
         self.paths = []
-        def preorder(root, route):
+        def postorder(root, route):
             if root:
-                preorder(root.left, route+"->"+str(root.val))
-                
-                preorder(root.right,route+"->"+str(root.val))
+                postorder(root.left, route+"->"+str(root.val))
+                postorder(root.right,route+"->"+str(root.val))
                 if not root.left and not root.right:
                     self.paths.append(route+"->"+str(root.val))
-        preorder(root,"")
+        postorder(root,"")
         for i in range(len(self.paths)):
             self.paths[i] = self.paths[i][2:]
         return self.paths

@@ -13,7 +13,6 @@ class Solution:
                 self.list[root.val] = True
                 inorder(root.right)
         inorder(root)
-        print(self.list)
         for i in self.list.keys():
             if self.list.get(k-i) and k-i!=i:
                 return True

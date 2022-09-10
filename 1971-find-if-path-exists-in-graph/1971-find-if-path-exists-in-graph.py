@@ -5,7 +5,6 @@ class Solution:
             dict_[n1].append(n2)
             dict_[n2].append(n1)
         seen = set()
-        print(dict_)
         def dfs(start, end, seen):
             if start == end:
                 return True

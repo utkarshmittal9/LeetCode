@@ -2,7 +2,6 @@ class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
         visisted_rooms = {0:True}
         def dfs(i):
-            print(i)
             for j in i:
                 if j not in visisted_rooms:
                     visisted_rooms[j] = True

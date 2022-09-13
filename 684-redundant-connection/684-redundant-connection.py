@@ -10,12 +10,10 @@ class Solution:
                     return True
             return False
         def check_tree(edges_trial):
-            print(edges_trial)
             adj_list = defaultdict(list)
             for i,j in edges_trial:
                 adj_list[i].append(j)
                 adj_list[j].append(i)
-            print(adj_list)
             visited = set()
             for i in range(1,len(adj_list)+1):
                 if i not in visited:

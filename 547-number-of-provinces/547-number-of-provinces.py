@@ -4,9 +4,9 @@ class Solution:
         visited = set()
         province = 0
         def dfs(node):
+            visited.add(node)
             for index, value in enumerate(isConnected[node]):
                 if index!=node and value and index not in visited:
-                    visited.add(index)
                     dfs(index)
                 
         

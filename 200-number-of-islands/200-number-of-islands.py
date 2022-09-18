@@ -1,9 +1,9 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         def dfs(row, col, visited):
-            if row < 0 or col < 0 or row >= max_row or col >= max_col or grid[row][col]!="1":
-                return 
-            grid[row][col] = "#"
+            if row < 0 or col < 0 or row >= max_row or col >= max_col or grid[row][col]!="1" or ((row,col)) in visited:
+                return True
+            visited.add((row,col))
             dfs(row+1, col,visited)
             dfs(row-1, col,visited)
             dfs(row, col+1,visited)
@@ -17,7 +17,7 @@ class Solution:
         max_col = len(grid[0])
         for i in range(len(grid)):
             for j in range(len(grid[0])):
-                if grid[i][j]=="1":
+                if grid[i][j]=="1" and ((i,j)) not in visited:
                     dfs(i,j, visited)
                     island+=1
         return island
